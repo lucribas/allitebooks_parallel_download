@@ -1,0 +1,65 @@
+{
+	"name": "allitebooks-downloader",
+	"version": "1.0.0",
+	"description": "Scrapes and downloads all IT eBooks from allitebooks.com",
+	"main": "main.js",
+	"scripts": {
+		"start": "node --experimental-modules main.js",
+		"test": "jest --coverage --verbose",
+		"clean": "rm -R ./data/*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lucribas/allitebooks_parallel_download.git"
+	},
+	"keywords": [
+		"allitebooks",
+		"ebooks",
+		"scraper"
+	],
+	"author": "Luciano Ribas",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/lucribas/allitebooks_parallel_download/issues"
+	},
+	"homepage": "https://github.com/lucribas/allitebooks_parallel_download#readme",
+	"prettier": {
+		"printWidth": 100,
+		"useTabs": true,
+		"tabWidth": 4,
+		"arrowParens": "always"
+	},
+	"dependencies": {
+		"@supercharge/promise-pool": "^1.3.0",
+		"await-fs": "^1.0.0",
+		"cheerio": "^1.0.0-rc.2",
+		"download": "^6.2.5",
+		"make-dir": "^1.2.0",
+		"multi-progress": "^3.0.0",
+		"progress": "^2.0.3",
+		"request": "^2.83.0",
+		"request-promise-native": "^1.0.5"
+	},
+	"devDependencies": {
+		"jest": "^22.4.2"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"*.js",
+			"!tests/**/*.test.js",
+			"!main.js"
+		],
+		"coverageThreshold": {
+			"global": {
+				"statements": 80,
+				"branches": 80,
+				"functions": 80,
+				"lines": 80
+			}
+		},
+		"moduleDirectories": [
+			"node_modules"
+		],
+		"testRegex": "tests/.*\\.test\\.js$"
+	}
+}
